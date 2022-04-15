@@ -33,7 +33,10 @@ const showDetails = (details) =>{
     const div = document.createElement('div')
     div.innerHTML = `
         <h2>Name: ${details.name}</h2>
-
+        <h2>Capital: ${details.capital}</h2>
+        <h2>Area: ${details.area} sq.km</h2>
+        <h2>population: ${details.population}</h2>
+        <img src="${details.flag}">
     `
     countryInfo.appendChild(div)
 }
