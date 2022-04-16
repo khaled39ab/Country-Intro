@@ -26,17 +26,22 @@ const countryDetails = (name) =>{
     fetch(`https://restcountries.com/v2/name/${name}`)
     .then (res => res.json())
     .then (data => showDetails(data[0]))
+    .catch(err => alert("Not match to any country"))
 }
 const showDetails = (details) =>{
-    console.log(details);
-    const countryInfo = document.getElementById("detailsI-Info")
-    const div = document.createElement('div')
-    div.innerHTML = `
+    const countryInfo = document.getElementById("details-Info")
+    countryInfo.innerHTML = `
         <h2>Name: ${details.name}</h2>
         <h2>Capital: ${details.capital}</h2>
         <h2>Area: ${details.area} sq.km</h2>
         <h2>population: ${details.population}</h2>
         <img src="${details.flag}">
     `
-    countryInfo.appendChild(div)
 }
+
+document.getElementById("search-btn").addEventListener("click", function(){
+    const input = document.getElementById("input-Field");
+    const inputSearch = input.value
+    countryDetails(inputSearch);
+    input.value = ""
+})

@@ -36,4 +36,18 @@ header> h3{
 #country{
     list-style: none;
     color: rgb(87, 87, 244);
+    cursor: pointer;
+}
+#details-Info{
+    /* height: 400px; */
+    max-width: 400px;
+    position: fixed;
+    left: 80%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    grid-template-columns: none;
+}
+
+#details-Info img{
+   width: 100%; 
 }
